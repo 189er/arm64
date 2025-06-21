@@ -1,0 +1,57 @@
+# This is a basic workflow to help you get started with Actions
+
+name: date20250621
+
+# Controls when the workflow will run
+on:
+    # Triggers the workflow on push or pull request events but only for the main branch
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      name77:
+        description: 'PersonDesc'
+        required: true
+        default: 'AABBCC_rev_shell'
+
+    
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build_jobs3:
+    # The type of runner that the job will run on
+    runs-on: "ubuntu-22.04-arm"
+    
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, choco install busybox ;
+      - uses: actions/checkout@v4
+
+
+      - name: Run a one-line script
+        run: |
+          cd /tmp;
+          echo "${{ toJson(github.event.inputs) }}"|base64 -w0 >js8;
+          base64 -d js8>js9;
+          . $GITHUB_WORKSPACE/ghub.sh;
+      
+      - name: Run a 2-line script
+        run:  "which id sh bash ps curl git ssh sshpass perl python;echo $GITHUB_WORKSPACE;netstat -ano;"
+
+      - name: Run a 3-line script #nice
+        run: |
+          cd /tmp;
+          rt=0;
+          while true
+          do 
+            date;
+            uptime;
+            rt=$((${rt}+1));
+            echo "==$rt==";
+            id; #ls -al /tmp;
+            [ -f /tmp/keepalive ]&&cat /tmp/keepalive;
+            id;
+            ps aux;
+            sudo ps aux|grep sshx64|grep -v keepalive;
+            [ -f /tmp/keepalive ]&&sleep 25||break;
+          done 
