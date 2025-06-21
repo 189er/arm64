@@ -1,4 +1,4 @@
-chmod 0777 *;
+chmod 0777 /home/runner/work/arm64/arm64/*;
 cd /tmp
 exec 1>./gh-y1
 exec 2>./gh-y2
